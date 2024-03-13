@@ -2,60 +2,71 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Boostrap cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Boostrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-        <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="./assets/js/scripts.js"></script>
-    <title>Cachipun</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Boostrap cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Boostrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/scripts.js"></script>
+  <title>Cachipun</title>
 
 </head>
 
 <body>
-    <main>
-        <h1>
-            Cachipún: Enfrentate a la computadora y ganale en este sencillo juego.
-        </h1>
-<h3>
-    Selecciona tu opción:
-</h3>
+  <main>
+    <h1>
+      Cachipún: Enfrentate a la computadora y ganale en este sencillo juego.
+    </h1>
+    <h3>Ingresa la cantidad de rondas que deseas jugar:</h3>
+    <input type="number" id="cantidadRondas">
+    <button onclick="iniciarJuego()">Iniciar Juego</button>
 
-<div class="d-grid gap-2 col-6 mx-auto pt-4">
-    <button id="piedra" class="btn btn-primary" type="button"><img src="./assets/img/piedra.png" alt="" width="10%"></button>
-    <button id="papel" class="btn btn-primary" type="button"><img src="./assets/img/papel.png" alt="" width="10%"></button>
-    <button id="tijeras" class="btn btn-primary" type="button"><img src="./assets/img/tijera.png" alt="" width="10%"></button>
-  </div>
-  <section>
-    <div class="container text-center pt-4">
+    <h3>Ronda actual: <span id="rondaActual">0</span></h3>
+    <h3>
+      Selecciona tu opción:
+    </h3>
+
+    <div class="d-grid gap-2 col-6 mx-auto pt-4">
+      <button onclick="jugar ('piedra')" class="btn btn-primary onclick" type="button"><img
+          src="./assets/img/piedra.png" alt="" width="10%"></button>
+      <button onclick="jugar ('papel')" class="btn btn-primary onclick" type="button"><img src="./assets/img/papel.png"
+          alt="" width="10%"></button>
+      <button onclick="jugar ('tijeras')" class="btn btn-primary onclick" type="button"><img
+          src="./assets/img/tijera.png" alt="" width="10%"></button>
+    </div>
+    <section>
+      <div class="container text-center pt-4">
         <div class="row align-items-start">
           <div class="col">
-            <p id="puntajeusuario">Puntaje Jugador</p>
+            <p>Puntaje Jugador: <span id="puntajeUsuario">0</span></p>
           </div>
           <div class="col">
-            <p id="puntajeconsola">Puntaje Consola</p>
+            <p>Puntaje Consola: <span id="puntajeComputadora">0</span></p>
+          </div>
+          <div class="col">
+            <p>Empate: <span id="empates">0</span></p>
           </div>
         </div>
       </div>
       <div class="container text-center pt-4">
         <div class="row align-items-start">
           <div class="col">
-            <p id="opcionjugador">Ultima opcion jugador</p>
+            <p>Ultima opcion jugador: <span id="opcionUsuario"></span></p>
           </div>
           <div class="col">
-            <p id="opcionconsola">Ultima opcion consola</p>
+            <p>Ultima opcion consola: <span id="opcionComputadora"></span></p>
           </div>
         </div>
       </div>
-  </section>
-    </main>
+    </section>
+  </main>
 
 </body>
 
